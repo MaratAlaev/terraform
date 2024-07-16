@@ -1,0 +1,14 @@
+#cloud-config
+users:
+  - name: marat
+    groups: sudo
+    shell: /bin/bash
+    sudo: 'ALL=(ALL) NOPASSWD:ALL'
+    ssh-authorized-keys:      
+      - ***
+
+write_files: 
+  - path: /var/www/html/index.html
+    content: "<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"></head> <h1>Кот шлепа</h1><img src=\"https://storage.yandexcloud.net/marat16-07-2024/cat.jpg\">"
+    owner: 'root:root'
+    permissions: '0644'
